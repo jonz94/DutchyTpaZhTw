@@ -1,4 +1,4 @@
-package nl.thedutchmc.dutchytpa;
+package dev.jonz94.dutchytpazhtw;
 
 import java.util.HashMap;
 import java.util.Map;

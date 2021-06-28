@@ -28,8 +28,6 @@ public class CommandHandler implements CommandExecutor {
 	  return true;
 	}
 	if (command.getName().equals("tpa")) {
-	  if (!sender.hasPermission("tpa.tpa"))
-		sender.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
 	  if (args.length == 1) {
 		if (!Bukkit.getOnlinePlayers().contains(Bukkit.getPlayer(args[0]))) {
 		  sender.sendMessage(ChatColor.RED + "Player is not online!");
@@ -59,8 +57,6 @@ public class CommandHandler implements CommandExecutor {
 	  return true;
 	}
 	if (command.getName().equals("tpaccept") || command.getName().equals("tpyes")) {
-	  if (!sender.hasPermission("tpa.accept"))
-		sender.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
 	  final Player senderP = (Player)sender;
 	  if (targetMap.containsValue(senderP.getUniqueId())) {
 		sender.sendMessage(ChatColor.GOLD + "TPA request accepted!");
@@ -80,8 +76,6 @@ public class CommandHandler implements CommandExecutor {
 	  return true;
 	}
 	if (command.getName().equals("tpdeny") || command.getName().equals("tpno")) {
-	  if (!sender.hasPermission("tpa.deny"))
-		sender.sendMessage(ChatColor.RED + "You do not have permission to use this command!");
 	  final Player senderP = (Player)sender;
 	  if (targetMap.containsValue(senderP.getUniqueId())) {
 		for (Map.Entry<UUID, UUID> entry : targetMap.entrySet()) {

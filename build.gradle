@@ -7,7 +7,6 @@ version = '1.16_1.1.2'
 compileJava.options.encoding = 'UTF-8'
 
 repositories {
-    jcenter()
     mavenCentral();
     
     maven {

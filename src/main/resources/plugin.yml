@@ -5,13 +5,13 @@ api-version: 1.16
 authors: [TheDutchMC, jonz94]
 description: A simple TPA plugin (zh-tw version)
 commands:
- tpa:
-  description: TPA to a player
- tpaccept:
-  description: Accept a TPA request
- tpdeny:
-  description: Deny a TPA request
- tpyes:
-  description: Alias for /tpaccept
- tpno:
-  description: Alias for /tpdeny
+  tpa:
+    description: TPA to a player
+  tpaccept:
+    description: Accept a TPA request
+  tpdeny:
+    description: Deny a TPA request
+  tpyes:
+    description: Alias for /tpaccept
+  tpno:
+    description: Alias for /tpdeny

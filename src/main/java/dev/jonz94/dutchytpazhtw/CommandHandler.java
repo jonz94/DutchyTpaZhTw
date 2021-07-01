@@ -53,7 +53,20 @@ public class CommandHandler implements CommandExecutor {
       }
 
       if (targetMap.containsKey(senderP.getUniqueId())) {
-        sender.sendMessage(ChatColor.GOLD + "你已經發過傳送請求了");
+        UUID targetUniqueId = targetMap.get(senderP.getUniqueId());
+        Player targetP = Bukkit.getPlayer(targetUniqueId);
+        sender.sendMessage(
+          ChatColor.GOLD +
+          "你剛才已經向 " +
+          ChatColor.RED +
+          targetP.getDisplayName() +
+          ChatColor.GOLD +
+          " 發送過傳送請求了\n你可以使用指令 " +
+          ChatColor.RED +
+          "/tpcancel" +
+          ChatColor.GOLD +
+          " 來取消這個請求"
+        );
 
         return false;
       }
@@ -143,6 +156,26 @@ public class CommandHandler implements CommandExecutor {
       }
 
       return true;
+    }
+
+    if (command.getName().equals("tpcannel")) {
+      final Player senderP = (Player) sender;
+
+      if (!targetMap.containsKey(senderP.getUniqueId())) {
+        sender.sendMessage(ChatColor.GOLD + "你目前沒有任何傳送請求");
+
+        return true;
+      }
+
+      if (targetMap.containsKey(senderP.getUniqueId())) {
+        UUID targetUniqueId = targetMap.get(senderP.getUniqueId());
+        Player targetP = Bukkit.getPlayer(targetUniqueId);
+        sender.sendMessage(ChatColor.GOLD + "你已經取消了向 " + ChatColor.RED + targetP.getDisplayName() + ChatColor.GOLD + " 的傳送請求");
+        targetP.sendMessage(ChatColor.RED + senderP.getDisplayName() + ChatColor.GOLD + " 取消了傳送請求");
+        targetMap.remove(senderP.getUniqueId());
+
+        return true;
+      }
     }
 
     return false;

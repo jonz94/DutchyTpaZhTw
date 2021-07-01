@@ -7,6 +7,8 @@ description: A simple TPA plugin (zh-tw version)
 commands:
   tpa:
     description: TPA to a player
+  tpcannel:
+    description: Cannel TPA request
   tpaccept:
     description: Accept a TPA request
   tpdeny:

@@ -10,3 +10,6 @@ insert_final_newline = true
 
 [*.gradle]
 indent_size = 4
+
+[*.bat]
+end_of_line = crlf

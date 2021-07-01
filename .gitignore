@@ -1,3 +1,15 @@
+# gradle
 .gradle/
 build/
+
+# node.js
 node_modules/
+
+# vscode java
+.classpath
+.project
+.settings/
+bin/
+
+# intellij idea
+.idea/
